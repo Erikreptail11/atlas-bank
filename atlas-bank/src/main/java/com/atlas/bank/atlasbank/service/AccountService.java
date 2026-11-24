@@ -83,4 +83,9 @@ public class AccountService {
 
     }
 
+    public List<Transaction> getTransactions(Long accountId) {
+        return transactionRepository.findBySourceAccountIdOrTargetAccountId(accountId, accountId);
+
+    }
+
 }
